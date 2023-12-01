@@ -1,0 +1,19 @@
+auth_id,is_anonymous,learn_lang,learn_lang_cnt,lang_code,app_version,platform,platform_version,device_category,continent,country,init_week_cd,init_use_date,last_week_cd,last_use_date,create_date,update_date
+SOzEDH1CRMeXS8hwpJ3IkQ,0,en,1,ru,5.0.2,ANDROID,Android 12,mobile,Asia,Kyrgyzstan,46,2022-10-03,46,2022-10-03,2022-11-23,2022-11-23
+0mlBoXZHSLmWELx913rR9g,0,"en,ko",2,en,5.0.2,ANDROID,Android 11,mobile,Europe,France,46,2022-10-04,46,2022-10-05,2022-11-23,2022-11-23
+ONG8kdYrQGqUP17PgZZFmA,0,ko,1,en,5.5.1,IOS,iOS 15.6.1,mobile,Asia,South Korea,96,2023-09-22,97,2023-09-27,2023-10-01,2023-10-08
+JHRdQdJWQrmH65m7odosVw,0,ko,1,en,5.5.1,IOS,iOS 16.6.1,mobile,Asia,South Korea,96,2023-09-23,97,2023-09-28,2023-10-01,2023-10-08
+W1_cjyfLSEqpecix7LdImQ,0,ko,1,en,5.5.1,IOS,iOS 17.0,mobile,Asia,South Korea,96,2023-09-18,97,2023-09-27,2023-10-01,2023-10-08
+ECvuummcQA-4GskntiAHtQ,0,ko,1,zh,5.5.1,IOS,iOS 16.6.1,mobile,Asia,South Korea,96,2023-09-18,97,2023-09-25,2023-10-01,2023-10-08
+djaAx8sEQReRzImtd2sA3w,0,ko,1,en,5.5.1,IOS,iOS 16.6.1,tablet,Asia,South Korea,97,2023-09-24,97,2023-09-30,2023-10-08,2023-10-08
+dvFjgBzQSu2S8De95BYqmg,0,ko,1,en,5.5.3,ANDROID,Android 13,mobile,Asia,South Korea,96,2023-09-20,97,2023-09-28,2023-10-01,2023-10-08
+0mlBoXZHSLmWELx913rR9g,0,ko,1,en,5.5.3,ANDROID,Android 11,mobile,Asia,South Korea,96,2023-09-18,97,2023-09-26,2023-10-01,2023-10-08
+3tv6xAvjSiOBvn6Pi8LkGw,0,ko,1,en,5.5.1,IOS,iOS 16.0.2,mobile,Asia,South Korea,96,2023-09-19,97,2023-09-29,2023-10-01,2023-10-08
+VrVBdpn5QWOhPYOMZYjqBQ,0,ko,1,en,5.5.1,IOS,iOS 16.6.1,tablet,Asia,South Korea,96,2023-09-18,97,2023-09-25,2023-10-01,2023-10-08
+SS_M7DvJTvKxIcNAt6rB5Q,0,ko,1,ko,5.5.1,IOS,iOS 16.6.1,tablet,Asia,South Korea,96,2023-09-19,96,2023-09-20,2023-10-01,2023-10-01
+dvFjgBzQSu2S8De95BYqmg,0,ko,1,en,5.5.3,ANDROID,Android 13,tablet,Asia,South Korea,96,2023-09-20,96,2023-09-20,2023-10-01,2023-10-01
+mRY84FM1R7WFu8jDymW3eA,0,ko,1,ko,5.5.1,IOS,iOS 16.6.1,mobile,Asia,South Korea,96,2023-09-22,96,2023-09-23,2023-10-01,2023-10-01
+Wma7L57WQgGc-9ivrhoG4A,0,ko,1,en,5.5.1,IOS,iOS 16.6.1,tablet,Asia,South Korea,96,2023-09-18,96,2023-09-18,2023-10-01,2023-10-01
+X89zKFz4QC-M5jwo1iLI4g,0,ko,1,en,5.5.3,ANDROID,Android 13,mobile,Asia,South Korea,96,2023-09-18,96,2023-09-23,2023-10-01,2023-10-01
+UXtdCOPLTDaONmM-mk4e1A,0,ko,1,ja,5.5.1,IOS,iOS 16.6.1,tablet,Asia,South Korea,95,2023-09-15,96,2023-09-21,2023-09-24,2023-10-01
+nPKbqr0XR0Kn8Jz8nj35Kw,0,ko,1,en,5.5.1,IOS,iOS 16.0,mobile,Asia,South Korea,96,2023-09-18,96,2023-09-18,2023-10-01,2023-10-01

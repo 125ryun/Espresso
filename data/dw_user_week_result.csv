@@ -1,0 +1,27 @@
+auth_id,week_cd,learn_lang,learn_lang_cnt,lang_code,app_version,platform,platform_version,device_category,continent,country,is_member,purchase_type,product,app_open_cnt,use_time_msec_sum,is_anonymous,is_unused,seg_cd,create_date
+0mlBoXZHSLmWELx913rR9g,46,"en,ko",2,en,5.0.2,ANDROID,Android 11,mobile,Europe,France,0,null,null,4,613914,0,0,20,2022-11-30
+SOzEDH1CRMeXS8hwpJ3IkQ,46,en,1,ru,5.0.2,ANDROID,Android 12,mobile,Asia,Kyrgyzstan,0,null,null,2,1675950,0,0,21,2022-11-30
+3tv6xAvjSiOBvn6Pi8LkGw,97,ko,1,en,5.5.1,IOS,iOS 16.0.2,mobile,Asia,South Korea,1,CAKE_COUPON,PLUS,2,1699276,0,0,21,2023-10-08
+JHRdQdJWQrmH65m7odosVw,97,ko,1,en,5.5.1,IOS,iOS 16.6.1,mobile,Asia,South Korea,1,CAKE_COUPON,PLUS,2,1186611,0,0,21,2023-10-08
+W1_cjyfLSEqpecix7LdImQ,97,ko,1,en,5.5.1,IOS,iOS 17.0,mobile,Asia,South Korea,1,CAKE_COUPON,PLUS,1,33430,0,0,20,2023-10-08
+djaAx8sEQReRzImtd2sA3w,97,ko,1,en,5.5.1,IOS,iOS 16.6.1,tablet,Asia,South Korea,1,CAKE_COUPON,PLUS,6,11462078,0,0,22,2023-10-08
+dvFjgBzQSu2S8De95BYqmg,97,ko,1,en,5.5.3,ANDROID,Android 13,mobile,Asia,South Korea,1,CAKE_COUPON,PLUS,4,1021364,0,0,20,2023-10-08
+ECvuummcQA-4GskntiAHtQ,97,ko,1,zh,5.5.1,IOS,iOS 16.6.1,mobile,Asia,South Korea,1,CAKE_COUPON,PLUS,1,17328,0,0,20,2023-10-08
+UXtdCOPLTDaONmM-mk4e1A,95,en,1,ja,5.5.1,IOS,iOS 16.6.1,tablet,Asia,South Korea,0,null,null,1,573273,0,0,20,2023-09-24
+3tv6xAvjSiOBvn6Pi8LkGw,96,ko,1,en,5.5.1,IOS,iOS 16.0.2,mobile,Asia,South Korea,1,CAKE_COUPON,PLUS,8,4119603,0,0,22,2023-10-01
+JHRdQdJWQrmH65m7odosVw,96,ko,1,en,5.5.1,IOS,iOS 16.6.1,mobile,Asia,South Korea,1,CAKE_COUPON,PLUS,2,861715,0,0,20,2023-10-01
+SS_M7DvJTvKxIcNAt6rB5Q,96,ko,1,ko,5.5.1,IOS,iOS 16.6.1,tablet,Asia,South Korea,1,CAKE_COUPON,PLUS,2,302459,0,0,20,2023-10-01
+W1_cjyfLSEqpecix7LdImQ,96,ko,1,en,5.5.1,IOS,iOS 17.0,mobile,Asia,South Korea,1,CAKE_COUPON,PLUS,6,1550002,0,0,21,2023-10-01
+ECvuummcQA-4GskntiAHtQ,96,ko,1,zh,5.5.1,IOS,iOS 16.6.1,mobile,Asia,South Korea,1,CAKE_COUPON,PLUS,3,29781,0,0,20,2023-10-01
+X89zKFz4QC-M5jwo1iLI4g,96,ko,1,en,5.5.3,ANDROID,Android 13,mobile,Asia,South Korea,1,CAKE_COUPON,PLUS,5,232580,0,0,20,2023-10-01
+Wma7L57WQgGc-9ivrhoG4A,96,ko,1,en,5.5.1,IOS,iOS 16.6.1,tablet,Asia,South Korea,1,CAKE_COUPON,PLUS,2,113277,0,0,20,2023-10-01
+UXtdCOPLTDaONmM-mk4e1A,96,ko,1,ja,5.5.1,IOS,iOS 16.6.1,tablet,Asia,South Korea,1,CAKE_COUPON,PLUS,3,522885,0,0,20,2023-10-01
+nPKbqr0XR0Kn8Jz8nj35Kw,96,ko,1,en,5.5.1,IOS,iOS 16.0,mobile,Asia,South Korea,1,CAKE_COUPON,PLUS,5,182136,0,0,20,2023-10-01
+dvFjgBzQSu2S8De95BYqmg,96,ko,1,en,5.5.3,ANDROID,Android 13,mobile,Asia,South Korea,1,CAKE_COUPON,PLUS,9,1948078,0,0,21,2023-10-01
+0mlBoXZHSLmWELx913rR9g,96,ko,1,ko,5.5.3,ANDROID,Android 11,mobile,Asia,South Korea,1,CAKE_COUPON,PLUS,3,249731,0,0,20,2023-10-01
+ONG8kdYrQGqUP17PgZZFmA,96,ko,1,fr,5.5.1,IOS,iOS 15.6.1,mobile,Asia,South Korea,1,CAKE_COUPON,PLUS,4,164161,0,0,20,2023-10-01
+VrVBdpn5QWOhPYOMZYjqBQ,96,ko,1,en,5.5.1,IOS,iOS 16.6.1,tablet,Asia,South Korea,1,CAKE_COUPON,PLUS,3,413511,0,0,20,2023-10-01
+mRY84FM1R7WFu8jDymW3eA,96,ko,1,ko,5.5.1,IOS,iOS 16.6.1,mobile,Asia,South Korea,1,CAKE_COUPON,PLUS,3,888992,0,0,20,2023-10-01
+0mlBoXZHSLmWELx913rR9g,97,ko,1,en,5.5.3,ANDROID,Android 11,mobile,Asia,South Korea,1,CAKE_COUPON,PLUS,2,88176,0,0,20,2023-10-08
+ONG8kdYrQGqUP17PgZZFmA,97,ko,1,en,5.5.1,IOS,iOS 15.6.1,mobile,Asia,South Korea,1,CAKE_COUPON,PLUS,2,46681,0,0,20,2023-10-08
+VrVBdpn5QWOhPYOMZYjqBQ,97,ko,1,en,5.5.1,IOS,iOS 16.6.1,tablet,Asia,South Korea,1,CAKE_COUPON,PLUS,1,8263,0,0,20,2023-10-08
