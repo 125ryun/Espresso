@@ -1,51 +1,75 @@
 import os
 import csv
-
-DATA_DIR_PATH = "./data"
-OUT_DIR_PATH = "./out"
+import pandas as pd
 
 DATA_FILE_PATH = "./data/dw_user_events.csv"
-USEFUL_COLNAMES = ["auth_id", "user_pseudo_id", "event_name", "event_timestamp_w_timezone", "screen_class", "previous_screen_class", "use_time_msec"]
-    
+TMP_FILE_PATH = "./out/tmp.csv"
+OUT_FILE_PATH = "./out/out.csv"
+
+ID = "auth_id"
+EVENTNAME = "event_name"
+PREV_SC = "previous_screen_class"
+CURR_SC = "screen_class"
+FORMATTED_TIMESTAMP = "fomatted_event_timestamp_w_timezone"
+TIMESTAMP = "event_timestamp_w_timezone"
+USETIME = "use_time_msec"
+
+USECOLS = [ID, EVENTNAME, PREV_SC, CURR_SC, TIMESTAMP, USETIME]
+OUT_COL_ORDER = [ID, FORMATTED_TIMESTAMP, EVENTNAME, PREV_SC, CURR_SC, USETIME]
+
+# read csv file
 try:
-    f_r = open(DATA_FILE_PATH, "r", encoding="utf8")    
+    data = pd.read_csv(DATA_FILE_PATH, keep_default_na=False, na_values='-', usecols=USECOLS)
 except:
-    print(f"**** ERROR: cannot open file {DATA_FILE_PATH}")
+    print(f"*** ERROR: cannot open file {DATA_FILE_PATH}")
     exit(1)
-rdr = csv.reader(f_r)
-
-if not os.path.exists(OUT_DIR_PATH):
-    os.mkdir(OUT_DIR_PATH)
-try:
-    f_tmp = open(OUT_DIR_PATH + "tmp.csv", "w", encoding="utf8")
-except:
-    print(f"**** ERROR: cannot open file {OUT_DIR_PATH}/tmp.csv")
-    exit(1)    
-wtr = csv.writer(f_tmp)
-
-colnames = []
-for i, row in enumerate(rdr):
-    if i==0: # header row
-        for j, colname in enumerate(row):
-            colnames.append(colname)
-
-f_r.close()
-f_tmp.close()
-
-# for filename in os.listdir(DATA_DIR_PATH):
-#     print(filename)
-#     f = open(DATA_DIR_PATH+"/"+filename, "r", encoding="utf8")
-#     rdr = csv.reader(f)
-        
-#     for row in rdr:
-#         print(row)
-
-#         arr = []
-#         for j, colname in enumerate(row):
-#             arr.append([j, colname])
-#         print(arr)
-        
-#         f.close()
-#         break
     
-#     print("\n")
+# make dataframe
+df = pd.DataFrame(data)
+df = df[USECOLS]
+df = df.sort_values(by=[ID, TIMESTAMP])
+
+df[TIMESTAMP] = df[TIMESTAMP] / 1000
+col_idx_formatted_timestamp = USECOLS.index(TIMESTAMP)
+col_name_formatted_timestamp = "fomatted_event_timestamp_w_timezone"
+col_data_formatted_timestamp = pd.to_datetime(df[TIMESTAMP], unit="ms")
+df.insert(col_idx_formatted_timestamp, col_name_formatted_timestamp, col_data_formatted_timestamp)
+
+# write tmp csv file
+# df.to_csv(TMP_FILE_PATH, sep=",", na_rep=".", header=True,index=False, encoding="utf8")
+        
+prev = 0
+curr = 0
+delete_row_idx = []
+for i in range(df.shape[0]):
+    if i==0:
+        continue
+    prev = df.iloc[i-1]
+    curr = df.iloc[i]
+    if prev[ID] == curr[ID]:
+        if prev[EVENTNAME] == curr[EVENTNAME]:
+            if prev[CURR_SC] == curr[CURR_SC]:
+                if  prev[PREV_SC] == curr[PREV_SC]:
+                    delete_row_idx.append(i-1)
+                    #print("** delete index: ", i-1)
+                    if prev[CURR_SC] == curr[PREV_SC]:
+                        delete_row_idx.append(i)
+                        #print("** delete index: ", i)
+            if prev[TIMESTAMP] == curr[TIMESTAMP]:
+                delete_row_idx.append(i)
+                    #print("** same timestamp index: ", i)
+                    #input("y/n")
+    i += 1
+
+
+df.drop(delete_row_idx, axis=0, inplace=True)
+df = df[OUT_COL_ORDER]
+df.reset_index(drop=True, inplace=True)
+
+last_idx = 0
+for i in range(df.shape[0]):
+    if i==0: continue
+    if df.iloc[i][ID] != df.iloc[i-1][ID] or i==df.shape[0]-1:
+        sliced_df = df.truncate(before=last_idx, after=i-1, axis=0, copy=False)
+        sliced_df.to_csv(f"./out/out_{df.iloc[i-1][ID]}.csv", sep=",", na_rep=".", header=True,index=False, encoding="utf8")
+        last_idx = i        
