@@ -1,0 +1,192 @@
+['screen_view' 'splash_visit' 'membership_user' 'user_engagement'
+ 'path_tab_step_click' 'path_tab_visit' 'first_open']
+------------------------
+screen_view
+--- prev ---------------
+MainActivity : 25
+Splash : 93
+null : 70
+HomeTab : 119
+MyTabSetting : 29
+UIViewController : 248
+RCTModalHostViewController : 158
+MyTab : 107
+StreakResult : 28
+PathTab : 304
+PushHistory : 23
+PathTabPlayer : 95
+Player : 42
+PlusOnlyTab : 66
+BadgeList : 8
+CollectionQuiz : 106
+StreakSetting : 3
+ReviewTab : 47
+SnackPlayer : 27
+Error : 2
+OnboardingLanguageSetting : 18
+SFAuthenticationViewController : 5
+OnboardingKoreanOptions : 18
+OnboardingFirst : 18
+MyNameChange : 3
+CurriculumDetail : 37
+SignInHubActivity : 4
+MyAccountChange : 4
+SpeakLecturePlayer : 74
+SpeakCourse : 41
+SpeakLectureSpeaking : 28
+RCTAlertController : 3
+Coupon : 7
+GDPRScreen : 2
+QBAlbumsViewController : 1
+QBAssetsViewController : 1
+QBImagePickerController : 1
+TOCropViewController : 1
+SpeakCollection : 3
+SnackUploaderList : 1
+ContinuousPlayer : 1
+UIActivityContentViewController : 2
+MyMembershipManagement : 1
+UIActivityViewController : 2
+--- curr ---------------
+Splash : 94
+Player : 51
+MainActivity : 27
+RCTModalHostViewController : 166
+MyAccountChange : 5
+MyTab : 110
+UIViewController : 252
+MyTabSetting : 32
+HomeTab : 131
+StreakSetting : 3
+PathTabPlayer : 98
+PushHistory : 24
+PathTab : 308
+CollectionQuiz : 108
+StreakResult : 29
+ReviewTab : 47
+SnackPlayer : 30
+PlusOnlyTab : 69
+BadgeList : 8
+Error : 2
+OnboardingKoreanOptions : 18
+OnboardingLanguageSetting : 18
+OnboardingFirst : 18
+SFAuthenticationViewController : 5
+MyNameChange : 3
+CurriculumDetail : 41
+Coupon : 11
+SignInHubActivity : 4
+SpeakLectureSpeaking : 28
+SpeakLecturePlayer : 75
+SpeakCourse : 42
+GDPRScreen : 2
+RCTAlertController : 3
+QBImagePickerController : 1
+QBAssetsViewController : 1
+TOCropViewController : 1
+QBAlbumsViewController : 1
+SpeakCollection : 3
+SnackUploaderList : 1
+ContinuousPlayer : 1
+UIActivityViewController : 2
+MyMembershipManagement : 1
+UIActivityContentViewController : 2
+------------------------
+
+------------------------
+splash_visit
+--- prev ---------------
+null : 80
+--- curr ---------------
+Splash : 78
+null : 2
+------------------------
+
+------------------------
+membership_user
+--- prev ---------------
+null : 53
+--- curr ---------------
+Splash : 51
+null : 2
+------------------------
+
+------------------------
+user_engagement
+--- prev ---------------
+null : 1500
+--- curr ---------------
+Player : 43
+MyTabSetting : 44
+UIViewController : 180
+MyTab : 85
+RCTModalHostViewController : 165
+MyAccountChange : 10
+StreakResult : 26
+PathTabPlayer : 108
+SnackPlayer : 31
+PathTab : 263
+PlusOnlyTab : 47
+CollectionQuiz : 109
+StreakSetting : 3
+PushHistory : 16
+ReviewTab : 31
+BadgeList : 8
+Splash : 3
+Error : 3
+HomeTab : 88
+SFAuthenticationViewController : 10
+OnboardingKoreanOptions : 16
+OnboardingLanguageSetting : 21
+MyNameChange : 3
+OnboardingFirst : 17
+CurriculumDetail : 18
+Coupon : 18
+MainActivity : 3
+SpeakCourse : 31
+SpeakLectureSpeaking : 21
+SpeakLecturePlayer : 64
+RCTAlertController : 3
+GDPRScreen : 2
+TOCropViewController : 1
+QBAlbumsViewController : 1
+QBAssetsViewController : 1
+SpeakCollection : 3
+SnackUploaderList : 1
+UIActivityContentViewController : 2
+MyMembershipManagement : 1
+------------------------
+
+------------------------
+path_tab_step_click
+--- prev ---------------
+null : 232
+--- curr ---------------
+PathTab : 182
+SnackPlayer : 24
+UIViewController : 16
+SpeakLecturePlayer : 10
+------------------------
+
+------------------------
+path_tab_visit
+--- prev ---------------
+null : 226
+--- curr ---------------
+PathTab : 210
+Error : 2
+CollectionQuiz : 2
+RCTModalHostViewController : 7
+PathTabPlayer : 4
+null : 1
+------------------------
+
+------------------------
+first_open
+--- prev ---------------
+null : 16
+--- curr ---------------
+UIViewController : 12
+null : 4
+------------------------
+
