@@ -1,27 +1,27 @@
+from define import *
 import os
 import pandas as pd
 
 def read_data(read_file_path):
   try:
-    data = pd.read_csv(read_file_path, keep_default_na=False, na_values='-', usecols=USECOLS)
+    data = pd.read_csv(read_file_path, keep_default_na=False, na_values='-')
   except:
     print(f"*** ERROR: cannot open file {read_file_path}")
     exit(1)
   return data
 
-def make_dataframe_with(data, options=[]):
-  df = pd.DataFrame(data)
-  if len(options)>0:
-    df = df[options]
-  return df
-
-def sort_dataframe_by(df, options, reset_index=1):
-  df = df.sort_values(by=options)
-  if reset_index:
-    df.reset_index(drop=True, inplace=True)
-  return df
-
-def write_data(df, write_dir_path, write_file_name, na_rep=".", header=True, index=False):
+def write_data(df, write_dir_path, write_file_name, header=True, index=False):
   if not os.path.exists(write_dir_path):
     os.mkdir(write_dir_path)
-  df.to_csv(f"{write_dir_path}/{write_file_name}", na_rep=na_rep, header=header, index=index, sep=",", encoding="utf8")
+  df.to_csv(f"{write_dir_path}/{write_file_name}", header=header, index=index, sep=",", na_rep=".", encoding="utf8")
+
+def slice_dataframe(df, direction=ROW, start=None, end=None, options=None):
+  try:
+    if direction == ROW:
+      newdf = df.iloc[start:end, :]
+    if direction == COL:
+      newdf = df.loc[:,options]
+  except:
+    print(f"*** ERROR: cannot slice dataframe ... direction={direction}, start={start}, end={end}, options={options}")
+    exit(1)
+  return newdf
