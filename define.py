@@ -1,6 +1,7 @@
 ROW = 0
 COL = 1
 
+METADATA_DIR_PATH = "./out/metadata"
 SLICED_DIR_PATH = "./out/sliced"
 CLEAN_DIR_PATH = "./out/clean"
 SESSIONS_DIR_PATH = "./out/sessions"

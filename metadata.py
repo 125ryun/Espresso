@@ -1,5 +1,7 @@
 from define import *
+import os
 import sys
+import csvdata as csvdt
 
 class event_class_stat:
   def __init__(self):
@@ -26,7 +28,9 @@ def get_info_abt_eventname(df):
     stats[eventname] = stat
 
   stdout = sys.stdout
-  sys.stdout = open("watch_eventnames.txt", "w")
+  if not os.path.exists(METADATA_DIR_PATH):
+    os.mkdir(METADATA_DIR_PATH)
+  sys.stdout = open(f"{METADATA_DIR_PATH}/watch_eventnames.txt", "w")
 
   for eventname in eventnames:
     print(eventname)
@@ -45,3 +49,14 @@ def get_info_abt_eventname(df):
 
   sys.stdout.close()
   sys.stdout = stdout
+  
+def get_info_abt_sc_null(df):
+  df = df[[EVENTNAME, PREV_SC, CURR_SC]]
+    
+  prev_null_df = df[(df[EVENTNAME]=="screen_view")&(df[PREV_SC]=="null")]
+  print(prev_null_df[CURR_SC].unique())
+  csvdt.write_data(prev_null_df, METADATA_DIR_PATH, "appopen_prev_null.csv")
+
+  curr_null_df = df[(df[EVENTNAME]=="screen_view")&(df[CURR_SC]=="null")]
+  print(prev_null_df[PREV_SC].unique())
+  csvdt.write_data(curr_null_df, METADATA_DIR_PATH, "appopen_curr_null.csv")
