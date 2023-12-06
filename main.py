@@ -1,5 +1,4 @@
 from define import *
-import os
 import pandas as pd
 
 import csvdata as csvdt
