@@ -1,6 +1,9 @@
 ROW = 0
 COL = 1
 
+SLICED_DIR_PATH = "./out/sliced"
+CLEAN_DIR_PATH = "./out/clean"
+SESSIONS_DIR_PATH = "./out/sessions"
 # data file path
 DATA_FILE_PATH = "./data/dw_user_events.csv"
 

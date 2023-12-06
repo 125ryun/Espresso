@@ -4,7 +4,8 @@ import pandas as pd
 
 def read_data(read_file_path):
   try:
-    data = pd.read_csv(read_file_path, keep_default_na=False, na_values='-')
+    #data = pd.read_csv(read_file_path, keep_default_na=False, na_values='-')
+    data = pd.read_csv(read_file_path, keep_default_na=False, na_values="-")
   except:
     print(f"*** ERROR: cannot open file {read_file_path}")
     exit(1)
