@@ -2,9 +2,6 @@ from define import *
 import pandas as pd
 import csvdata as csvdt
 
-SLICED_DIR_PATH = "./out/sliced"
-CLEAN_DIR_PATH = "./out/clean"
-
 def format(df):
   USECOLS = [ID, EVENTNAME, PREV_SC, CURR_SC, USETIME, TIMESTAMP]
 

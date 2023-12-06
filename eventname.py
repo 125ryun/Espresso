@@ -25,6 +25,7 @@ def get_info_abt_eventname(df):
     stat.add('c', curr_sc)
     stats[eventname] = stat
 
+  stdout = sys.stdout
   sys.stdout = open("watch_eventnames.txt", "w")
 
   for eventname in eventnames:
@@ -43,3 +44,4 @@ def get_info_abt_eventname(df):
     print("------------------------\n")
 
   sys.stdout.close()
+  sys.stdout = stdout
