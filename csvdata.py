@@ -11,10 +11,10 @@ def read_data(read_file_path):
     exit(1)
   return data
 
-def write_data(df, write_dir_path, write_file_name, header=True, index=False):
+def write_data(df, write_dir_path, write_file_name, header=True, index=False, na_rep="."):
   if not os.path.exists(write_dir_path):
     os.mkdir(write_dir_path)
-  df.to_csv(f"{write_dir_path}/{write_file_name}", header=header, index=index, sep=",", na_rep=".", encoding="utf8")
+  df.to_csv(f"{write_dir_path}/{write_file_name}", header=header, index=index, na_rep=na_rep, sep=",", encoding="utf8")
 
 def slice_dataframe(df, direction=ROW, start=None, end=None, options=None):
   try:
