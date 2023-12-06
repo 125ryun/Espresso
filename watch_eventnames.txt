@@ -1,5 +1,12 @@
-['screen_view' 'splash_visit' 'membership_user' 'user_engagement'
- 'path_tab_step_click' 'path_tab_visit' 'first_open']
+screen_view
+splash_visit
+membership_user
+user_engagement
+path_tab_step_click
+path_tab_visit
+first_open
+
+
 ------------------------
 screen_view
 --- prev ---------------

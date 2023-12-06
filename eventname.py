@@ -27,7 +27,10 @@ def get_info_abt_eventname(df):
 
   sys.stdout = open("watch_eventnames.txt", "w")
 
-  print(eventnames)
+  for eventname in eventnames:
+    print(eventname)
+  print("\n")
+  
   for key, value in stats.items():
     print("------------------------")
     print(key)
