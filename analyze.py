@@ -132,12 +132,12 @@ def screenview():
     
     stats_screenclass_type_df = pd.concat(stat_screenclass_type, axis=1)
     stats_screenclass_type_df = stats_screenclass_type_df.sort_index()
-    csvdt.write_data(stats_screenclass_type_df, STATS_DIR_PATH, "count_screenclass_type.csv", index=True)
+    csvdt.write_data(stats_screenclass_type_df, STATS_DIR_PATH, "count_screenclass_type.csv", index=True, na_rep=0)
 
     stats_screenclass_series_2_df = pd.concat(stat_screenclass_series_2, axis=1)
     stats_screenclass_series_2_df = stats_screenclass_series_2_df.sort_index()
-    csvdt.write_data(stats_screenclass_series_2_df, STATS_DIR_PATH, "count_screenclass_series_2.csv", index=True)
+    csvdt.write_data(stats_screenclass_series_2_df, STATS_DIR_PATH, "count_screenclass_series_2.csv", index=True, na_rep=0)
     
     stats_screenclass_series_3_df = pd.concat(stat_screenclass_series_3, axis=1)
     stats_screenclass_series_3_df = stats_screenclass_series_3_df.sort_index()
-    csvdt.write_data(stats_screenclass_series_3_df, STATS_DIR_PATH, "count_screenclass_series_3.csv", index=True)
+    csvdt.write_data(stats_screenclass_series_3_df, STATS_DIR_PATH, "count_screenclass_series_3.csv", index=True, na_rep=0)
