@@ -1,0 +1,6 @@
+0,1,2,3,4,5,6,7,8,9,10,11,12
+null,UIViewController,UIViewController,Splash,OnboardingFirst,OnboardingLanguageSetting,OnboardingKoreanOptions,PathTabPlayer,.,.,.,.,.
+null,UIViewController,UIViewController,Splash,PathTab,RCTModalHostViewController,Splash,UIViewController,PathTab,Coupon,Splash,PathTab,.
+null,UIViewController,UIViewController,Splash,PathTab,Error,Splash,PathTab,RCTModalHostViewController,.,.,.,.
+null,UIViewController,UIViewController,Splash,PathTab,Error,Splash,PathTab,SnackPlayer,.,.,.,.
+null,UIViewController,UIViewController,Splash,PathTab,RCTModalHostViewController,UIViewController,SnackPlayer,PathTab,RCTModalHostViewController,UIViewController,CollectionQuiz,null
