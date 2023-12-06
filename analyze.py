@@ -4,26 +4,23 @@ import pandas as pd
 import csvdata as csvdt
 
 def screenview():
-    final = []
-    
-    for sliced_file_name in os.listdir(SLICED_DIR_PATH):
-        stat = []
-        
-        data = csvdt.read_data(os.path.join(SLICED_DIR_PATH, sliced_file_name))
+    stat = []
+    for filename in os.listdir(SLICED_DIR_PATH):
+        data = csvdt.read_data(os.path.join(SLICED_DIR_PATH, filename))
         df = pd.DataFrame(data)
         
         id = df.iloc[0][ID]
         
-        scview_df = df[df[EVENTNAME]=="screen_view"]
-        csvdt.write_data(scview_df, CLEAN_DIR_PATH, f"scview_{id}.csv")
+        screen_view_df = df[df[EVENTNAME]=="screen_view"]
+        csvdt.write_data(screen_view_df, CLEAN_DIR_PATH, f"screen_view_{id}.csv")
         
-        df_len = scview_df.shape[0]
+        screen_view_df_len = screen_view_df.shape[0]
         
         sessions = []
         session = []
         # sc_w_usetime = []
         first_row = 1
-        for i, row in enumerate(scview_df.iloc):
+        for i, row in enumerate(screen_view_df.iloc):
             curr_sc = row[CURR_SC]
             usetime = row[USETIME]
             
@@ -60,25 +57,36 @@ def screenview():
             else:
                 print("**** error: ", id, i)
         
-            if i == df_len-1:
+            if i == screen_view_df_len-1:
                 session.append("null")
                 # session.append(["null", 0])
                 sessions.append(session)            
             
-        ss_df = pd.DataFrame(sessions)
+        sessions_df = pd.DataFrame(sessions)
+        csvdt.write_data(sessions_df, SESSIONS_DIR_PATH, f"sessions_{id}.csv")
         
-        ss_df_transpose = ss_df.transpose()
-        df_colwise = []
-        for i in range(ss_df_transpose.shape[1]):
-            df_colwise.append(ss_df_transpose.iloc[:,i])
-        ss_df_onecol = pd.concat(df_colwise)
-        # print(ss_df_onecol)
-        print(id, "\n", ss_df_onecol.value_counts())
-        continue
+        sessions_df_transpose = sessions_df.transpose()
         
-        tmp = ss_df.value_counts()
-        print(id)
-        print(ss_df.nunique())
+        session_df_colwise = []
+        for i in range(sessions_df_transpose.shape[1]):
+            session_df_colwise.append(sessions_df_transpose.iloc[:,i])
+        sessions_df_reshape = pd.concat(session_df_colwise)
+        
+        sc_type_cnt = sessions_df_reshape.value_counts()
+        # print(id, "\n", val_cnt)
+        # print(val_cnt.index.tolist())
+        # print(val_cnt.tolist())
+        
+        # values = [_ for _ in zip(val_cnt.index.tolist(), val_cnt.tolist())]
+        # values_df = pd.DataFrame(values)
+        sc_type_cnt = pd.DataFrame({id: sc_type_cnt}, index=sc_type_cnt.index.tolist())
+        stat.append(sc_type_cnt)
+        
+        # # exit(1)
+        
+        # tmp = ss_df.value_counts()
+        # print(id)
+        # print(ss_df.nunique())
         
         # for _ in tmp:
         #     print(_)
@@ -95,6 +103,8 @@ def screenview():
         # ss_df.insert(0, "#session", session_num_list)
         # csvdt.write_data(final_df, SESSIONS_DIR_PATH, f"3d_sessions_{id}.csv")
         
-        csvdt.write_data(ss_df, SESSIONS_DIR_PATH, f"sessions_{id}.csv")
-        
-        
+    stats_df = pd.concat(stat, axis=1)
+    csvdt.write_data(stats_df, STATS_DIR_PATH, "count_screenclass_type.csv", index=True)
+    
+def statistics():
+    pass
