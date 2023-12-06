@@ -5,7 +5,6 @@ SLICED_DIR_PATH = "./out/sliced"
 CLEAN_DIR_PATH = "./out/clean"
 SESSIONS_DIR_PATH = "./out/sessions"
 STATS_DIR_PATH = "./out/stats"
-FINAL_DIR_PATH = "./out/final"
 
 # data file path
 DATA_FILE_PATH = "./data/dw_user_events.csv"
