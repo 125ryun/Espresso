@@ -3,9 +3,10 @@ import os
 import pandas as pd
 import csvdata as csvdt
 
-def screenview():
+def screenview():    
     stat_screenclass_type = []
-    stat_screenclass_series = []
+    stat_screenclass_series_2 = []
+    stat_screenclass_series_3 = []
     
     for filename in os.listdir(SLICED_DIR_PATH):
         data = csvdt.read_data(os.path.join(SLICED_DIR_PATH, filename))
@@ -67,20 +68,28 @@ def screenview():
         sessions_df = pd.DataFrame(sessions)
         csvdt.write_data(sessions_df, SESSIONS_DIR_PATH, f"sessions_{id}.csv")
         
-        dict = {}
+        stat_screenclass_series_2_dict = {}
+        stat_screenclass_series_3_dict = {}
         for i, session in enumerate(sessions):
             session_len = len(session)            
             for j, sc in enumerate(session):
-                if j == session_len-2:
-                    break
+                if j == session_len-1: break
+                key = "-".join([session[j], session[j+1]])
+                stat_screenclass_series_2_dict[key] = stat_screenclass_series_2_dict.get(key, 0) + 1
+                if j == session_len-2: break
                 key = "-".join([session[j], session[j+1], session[j+2]])
-                dict[key] = dict.get(key, 0) + 1
+                stat_screenclass_series_3_dict[key] = stat_screenclass_series_3_dict.get(key, 0) + 1
         # list = [(key, value) for key, value in dict.items]
         # print(dict.items())
         # print(list)
-        sc_series_cnt = dict.values()
-        sc_series_cnt_df = pd.DataFrame({id:sc_series_cnt}, index=dict.keys())
-        stat_screenclass_series.append(sc_series_cnt_df)
+        
+        sc_series_cnt = stat_screenclass_series_2_dict.values()
+        sc_series_cnt_df = pd.DataFrame({id:sc_series_cnt}, index=stat_screenclass_series_2_dict.keys())
+        stat_screenclass_series_2.append(sc_series_cnt_df)
+        
+        sc_series_cnt = stat_screenclass_series_3_dict.values()
+        sc_series_cnt_df = pd.DataFrame({id:sc_series_cnt}, index=stat_screenclass_series_3_dict.keys())
+        stat_screenclass_series_3.append(sc_series_cnt_df)
         # continue
         
         sessions_df_transpose = sessions_df.transpose()
@@ -120,12 +129,15 @@ def screenview():
         #     session_num_list.extend([i]*ss_df.shape[1])
         # ss_df.insert(0, "#session", session_num_list)
         # csvdt.write_data(final_df, SESSIONS_DIR_PATH, f"3d_sessions_{id}.csv")
-        
-    
-    # exit(1)
     
     stats_screenclass_type_df = pd.concat(stat_screenclass_type, axis=1)
+    stats_screenclass_type_df = stats_screenclass_type_df.sort_index()
     csvdt.write_data(stats_screenclass_type_df, STATS_DIR_PATH, "count_screenclass_type.csv", index=True)
+
+    stats_screenclass_series_2_df = pd.concat(stat_screenclass_series_2, axis=1)
+    stats_screenclass_series_2_df = stats_screenclass_series_2_df.sort_index()
+    csvdt.write_data(stats_screenclass_series_2_df, STATS_DIR_PATH, "count_screenclass_series_2.csv", index=True)
     
-    stats_screenclass_series_df = pd.concat(stat_screenclass_series, axis=1)
-    csvdt.write_data(stats_screenclass_series_df, STATS_DIR_PATH, "count_screenclass_series.csv", index=True)
+    stats_screenclass_series_3_df = pd.concat(stat_screenclass_series_3, axis=1)
+    stats_screenclass_series_3_df = stats_screenclass_series_3_df.sort_index()
+    csvdt.write_data(stats_screenclass_series_3_df, STATS_DIR_PATH, "count_screenclass_series_3.csv", index=True)
