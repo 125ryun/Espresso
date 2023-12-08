@@ -2,7 +2,7 @@ from define import *
 import os
 import pandas as pd
 
-def read_data(read_file_path):
+def read_data(read_file_path, index_col=None):
   try:
     data = pd.read_csv(read_file_path, keep_default_na=False, na_values="-")
   except:
