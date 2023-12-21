@@ -50,14 +50,23 @@ edge_alphas = [data['weight'] for u, v, data in G.edges(data=True)]
 
 # 그래프 그리기
 plt.figure(figsize=(18,13))
-pos = nx.fruchterman_reingold_layout(G, k=3)  # 레이아웃 설정
+pos = nx.fruchterman_reingold_layout(G, k=1.5)  # 레이아웃 설정
 nx.draw_networkx_nodes(G, pos, node_size=node_sizes, node_color='gray', alpha=0.5, nodelist=[node for node, data in G.nodes(data=True) if data['size'] > 0 and data['edge_count'] > 50],)
 nx.draw_networkx_edges(G, pos, width=edge_widths, edge_color='blue', alpha=0.5)
 nx.draw_networkx_labels(G, pos)
 
 # 그래프 저장
-plt.savefig("image.png")
-plt.show()
+PNG_FILE_NAME = "foo000"
+i = 0
+while f"{PNG_FILE_NAME}.png" in os.listdir("./out/image"):
+    i += 1
+    PNG_FILE_NAME = "foo" + str(i).zfill(3)
+plt.savefig(f"./out/image/{PNG_FILE_NAME}.png")
+
+print(f"Done generating ./out/image/{PNG_FILE_NAME}.png")
+
+# plt.savefig("image.png")
+# plt.show()
 exit(1)
 '''
 edge_alphas = [1-1/weigh for weigh in weighs]
@@ -96,22 +105,24 @@ plt.figure(figsize=(10, 7))
 node_size = [0.0005 * v for v in visits]
 edge_width = [0.0015 * s for s in weighs]
 options = {
+    "arrowstyle": "-|>",
     "arrowsize": 5,
     "node_color": "lightblue",
     "with_labels": True,
     "node_shape": "o",
     "font_size": 8,
+    "alpha": 0.7,
 }
-nx.draw(G, **options, node_size = node_size, alpha = 0.7, width = edge_width)
+nx.draw(G, **options, node_size = node_size, width = edge_width)
 #################################
 
 PNG_FILE_NAME = "foo000"
 i=0
-if not os.path.exists("./image"):
-    os.mkdir("./image")
-while f"{PNG_FILE_NAME}.png" in os.listdir("./image"):
+if not os.path.exists("./out/image"):
+    os.mkdir("./out/image")
+while f"{PNG_FILE_NAME}.png" in os.listdir("./out/image"):
     PNG_FILE_NAME = "foo" + str(i).zfill(3)
     i += 1
-plt.savefig(f"./image/{PNG_FILE_NAME}.png")
+plt.savefig(f"./out/image/{PNG_FILE_NAME}.png")
 
-print(f"Done generating ./image/{PNG_FILE_NAME}.png")
+print(f"Done generating ./out/image/{PNG_FILE_NAME}.png")
